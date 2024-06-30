@@ -1,0 +1,411 @@
+/*========import Google Fonts ================== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --light-red-color: rgb(243, 77, 77);
+    --light-silver-color: rgba(221, 207, 207, 0.586);
+    --dark-silver-color: rgb(97, 97, 97);
+    --white-color: rgb(255, 255, 255);
+    --purble-color: rgb(151, 2, 151);
+    --dark-color: rgb(0, 0, 0);
+    --decoration-pink-color: rgb(230, 181, 230);
+    --hover-color: rgb(83, 75, 242);
+
+    --font-big: 24px;
+    --font-normal: 18px;
+    --font-smaller-normal: 16px;
+    --font-small: 14px;
+    --font-smaller: 11px;
+
+    --font-w3: 300;
+    --font-w4: 400;
+    --font-w5: 500;
+    --font-w6: 600;
+    --font-w7: 700;
+    --font-w8: 800;
+
+    --transition-background: background-color .3s ease-in-out;
+    --transition-color: color .3s;
+}
+
+html,
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    background: radial-gradient(circle, rgb(241, 215, 219), rgb(237, 244, 245));
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow-x: hidden;
+    /* This will prevent horizontal scrolling and remove the empty space on the right */
+}
+
+.headerTop .navbar a:hover {
+    background-color: var(--hover-color);
+    color: var (--white-color);
+}
+
+.headerTop .wrapperItem {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px;
+}
+
+.wrapperItem ul {
+    gap: .6rem;
+    line-height: 20px;
+    list-style: none;
+}
+
+.headerTop ul ul {
+    position: absolute;
+    border: 1px solid var(--light-silver-color);
+    background-color: var(--white-color);
+    display: none;
+    z-index: 1;
+    line-height: 18px;
+    list-style: none;
+    margin-top: 0.5rem;
+}
+
+.headerTop .right ul ul li a {
+    padding: .4rem 1rem;
+    display: block;
+}
+
+/* Style for current dropdown item */
+.wrapperItem .right ul ul li.current a {
+    padding: .4rem 1rem;
+    background: var(--light-silver-color);
+}
+
+.wrapperItem li:hover ul {
+    display: block;
+    /* display the currency list like USD, SEK, etc., & language list arrow */
+}
+
+.headerTop a:hover {
+    color: var(--hover-color);
+    /* hover the currency & language lists and all top headers */
+}
+
+.headerTop a {
+    text-decoration: none;
+    padding: .6rem;
+    /* hover the currency & language lists and all top headers */
+}
+
+/* header navbar */
+.headerNav {
+    padding: .6rem .4rem;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid var(--light-silver-color);
+    background: rgba(241, 210, 241, 0.873);
+    font-weight: var(--font-w6);
+    font-family: 'Poppins', Arial, sans-serif;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(10px);
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    z-index: 1;
+}
+
+.wrapperItem {
+    display: flex;
+    align-items: center;
+}
+
+.trigger {
+    text-decoration: none;
+    display: flex;
+    padding: .6rem 1.2rem;
+    font-size: 1.4rem;
+    margin-right: -1em;
+    margin-top: .7rem;
+}
+
+.logo {
+    font-weight: var(--font-w8);
+    font-size: var(--font-big);
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 1rem;
+    position: relative;
+    margin-right: 2rem;
+    color: var(--dark-silver-color);
+    top: -0.3rem;
+}
+
+.logo-top {
+    font-size: var(--font-big);
+    color: var(--dark-silver-color);
+    top: -1rem;
+    margin-bottom: -1rem;
+}
+
+.logo-bottom {
+    font-size: var(--font-big);
+    color: var(--purble-color);
+    padding-left: .4rem;
+    margin-left: 1rem;
+    /* Add margin to move it right */
+}
+
+.left .logo span {
+    font-weight: var(--font-w8);
+    font-size: var(--font-big);
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    color: var(--purble-color);
+}
+
+/* Increase font size for top-level navigation links */
+.headerNav nav>ul.wrapper-links>li>a {
+    font-size: var(--font-normal);
+    /* Adjust this value as needed */
+    padding: 1rem .5rem;
+    /* Adjust padding for better spacing */
+}
+
+/* Ensure other styles for these elements remain consistent 
+.headerNav nav>ul.wrapper-links>li>a:hover {
+    background-color: var(--dark-silver-color);
+    color: var(--white-color);
+    border-radius: 20%;
+    -webkit-border-radius: 20%;
+    -moz-border-radius: 20%;
+    -ms-border-radius: 20%;
+    -o-border-radius: 20%;
+}
+*/
+.headerNav nav li {
+    margin-left: .6rem;
+}
+
+.fly-item {
+    position: absolute;
+    font-size: var(--font-smaller);
+    color: var(--white-color);
+    padding: 3px;
+    line-height: .8rem;
+    text-align: center;
+    height: 18px;
+}
+
+nav .fly-item {
+    top: 50%;
+    width: 38px;
+    font-size: var(--font-smaller);
+    background: var(--light-red-color);
+    right: -2.4rem;
+    margin-top: -1.4rem;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
+}
+
+.headerNav .right {
+    position: relative;
+    display: flex;
+    margin-left: auto;
+}
+
+.icon-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    right: 1.9rem;
+    margin-left: 2rem;
+    /* Add margin to move it right */
+}
+
+/* this is hover for nav header , home , men ,,,etc i think i will remove it 
+.headerNav nav a:hover {
+    background-color: var(--hover-color);
+    color: var(--white-color);
+    border-radius: 24%;
+    -webkit-border-radius: 24%;
+    -moz-border-radius: 24%;
+    -ms-border-radius: 24%;
+    -o-border-radius: 24%;
+}
+*/
+
+.headerNav ul {
+    list-style: none;
+}
+
+.headerNav ul a {
+    text-decoration: none;
+    color: var(--dark-color);
+}
+
+.headerNav li a {
+    display: flex;
+    position: relative;
+    line-height: inherit;
+}
+
+.headerNav .right .fly-item {
+    top: -13px;
+    width: 20px;
+    height: 20px;
+    left: 14px;
+    color: var(--white-color);
+    border-radius: 50%;
+    background: var(--dark-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--font-smaller);
+}
+
+.icon-container .wish-item,
+.icon-container .cart {
+    position: relative;
+    display: flex;
+    align-items: center;
+    color: var(--dark-color);
+    text-decoration: none;
+    margin-bottom: -10px;
+    left: 1.4rem;
+}
+
+.wish-item .arrow-icon,
+.cart .arrow-icon {
+    font-size: var(--font-big);
+    position: relative;
+}
+
+.mobile-hide {
+    display: none;
+}
+
+.right .icon-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 1.3rem;
+    margin-bottom: 10px;
+}
+
+.icon-text .mini-text {
+    font-size: var(--font-smaller-normal);
+    color: var (--dark-color);
+}
+
+.icon-text .cart-total {
+    font-size: var(--font-smaller-normal);
+    color: var (--dark-color);
+    margin-right: 1.4rem;
+}
+
+.icon-container li {
+    margin-left: -9px;
+    /* Add space between list items */
+}
+
+/*Women arrow section*/
+nav .Women-arrow .wrapper {
+    flex: 1;
+    z-index: 1;
+    padding-right: .5rem;
+    min-width: 200px;
+}
+
+nav .Women-arrow h3 {
+    padding-left: .6rem;
+    font-weight: var(--font-w5);
+}
+
+nav .Women-arrow ul {
+    font-size: var(--font-smaller);
+    font-weight: var(--font-w4);
+}
+
+nav .Women-arrow li a {
+    line-height: 1.6rem;
+    font-weight: var(--font-w4);
+    font-size: var(--font-small);
+}
+
+.Women-arrow .wrapperItem .media {
+    width: 100%;
+    float: right;
+    margin-right: 3rem;
+}
+
+.media .img-women-arrow img {
+    width: 100%;
+    height: auto;
+}
+
+.text-content a {
+    font-size: var(--font-small);
+    font-weight: var(--font-w6);
+}
+
+/*media query */
+@media screen and (min-width: 990px) {
+    .container {
+        padding: .4rem;
+    }
+
+    /* display none icon on desktop browser */
+    .desktop-hide {
+        display: none;
+    }
+
+    .mobile-hide {
+        display: block;
+    }
+
+    .logo {
+        margin-right: 3rem;
+    }
+
+    .headerNav {
+        padding: 0;
+        margin: 0;
+        border-bottom: 0;
+    }
+
+    .headerNav .right li>a {
+        margin-left: 1rem;
+    }
+
+    /*Women arrow section*/
+    nav .Women-arrow {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        padding: 1rem;
+        background: var(--light-silver-color);
+        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+        /* Bottom shadow */
+        line-height: 2.4rem;
+        width: 100%;
+        height: auto;
+    }
+
+    nav .Women-arrow .container {
+        display: flex;
+    }
+
+    .text-content h4 {
+        font-size: var(--font-small);
+        font-weight: var(--font-w6);
+    }
+}
