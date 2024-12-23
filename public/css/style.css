@@ -1,4 +1,5 @@
 /*========import Google Fonts ================== */
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
 
 * {
@@ -13,30 +14,29 @@
     --dark-silver-color: rgb(97, 97, 97);
     --white-color: rgb(255, 255, 255);
     --purble-color: rgb(151, 2, 151);
+    --dark-purble-color: rgb(90, 15, 106);
+    --orange-color: rgb(252, 218, 188);
     --dark-color: rgb(0, 0, 0);
-    --decoration-pink-color: rgb(230, 181, 230);
+    --decoration-pink-color: rgb(240, 183, 240);
     --hover-color: rgb(83, 75, 242);
-
     --font-big: 24px;
     --font-normal: 18px;
     --font-smaller-normal: 16px;
     --font-small: 14px;
     --font-smaller: 11px;
-
     --font-w3: 300;
     --font-w4: 400;
     --font-w5: 500;
     --font-w6: 600;
     --font-w7: 700;
     --font-w8: 800;
-
     --transition-background: background-color .3s ease-in-out;
     --transition-color: color .3s;
 }
 
 html,
 body {
-    font-family: 'Poppins', Arial, sans-serif;
+    font-family: 'Poppins', 'Arial', 'sans-serif';
     background: radial-gradient(circle, rgb(241, 215, 219), rgb(237, 244, 245));
     margin: 0;
     padding: 0;
@@ -70,7 +70,7 @@ body {
     z-index: 1;
     line-height: 18px;
     list-style: none;
-    margin-top: 0.5rem;
+    margin-top: 0.1rem;
 }
 
 .headerTop .right ul ul li a {
@@ -78,14 +78,23 @@ body {
     display: block;
 }
 
-/* Style for current dropdown item */
-.wrapperItem .right ul ul li.current a {
-    padding: .4rem 1rem;
+.headerTop .right ul ul li.current a {
+    background-color: var(--light-silver-color);
+}
+
+.right ul li .ri-arrow-down-s-fill {
+    font-size: 1.3rem;
+}
+
+.wrapperItem .right ul ul li a:hover,
+.wrapperItem .right ul ul li a:focus,
+.wrapperItem .right ul ul li a:active {
     background: var(--light-silver-color);
 }
 
 .wrapperItem li:hover ul {
     display: block;
+    padding-right: -90px;
     /* display the currency list like USD, SEK, etc., & language list arrow */
 }
 
@@ -100,7 +109,9 @@ body {
     /* hover the currency & language lists and all top headers */
 }
 
+
 /* header navbar */
+
 .headerNav {
     padding: .6rem .4rem;
     margin-bottom: 2rem;
@@ -168,13 +179,17 @@ body {
     color: var(--purble-color);
 }
 
+
 /* Increase font size for top-level navigation links */
+
 .headerNav nav>ul.wrapper-links>li>a {
     font-size: var(--font-normal);
     /* Adjust this value as needed */
     padding: 1rem .5rem;
     /* Adjust padding for better spacing */
+    margin-top: .8rem;
 }
+
 
 /* Ensure other styles for these elements remain consistent 
 .headerNav nav>ul.wrapper-links>li>a:hover {
@@ -187,6 +202,7 @@ body {
     -o-border-radius: 20%;
 }
 */
+
 .headerNav nav li {
     margin-left: .6rem;
 }
@@ -230,6 +246,7 @@ nav .fly-item {
     margin-left: 2rem;
     /* Add margin to move it right */
 }
+
 
 /* this is hover for nav header , home , men ,,,etc i think i will remove it 
 .headerNav nav a:hover {
@@ -293,6 +310,78 @@ nav .fly-item {
     display: none;
 }
 
+.media .img-women-arrow img {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    object-fit: cover;
+    display: block;
+}
+
+.wrapperItem .media {
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.primary-button,
+.secondary-button,
+.light-button {
+    padding: .5rem 1.8rem;
+    font-size: var(--font-small);
+    border-radius: 2rem;
+    text-decoration: none;
+    height: auto;
+    width: fit-content;
+}
+
+
+.text-content .primary-button {
+    background-color: var(--light-red-color);
+    color: var(--white-color);
+}
+
+.text-content .primary-button:hover {
+    background-color: var(--dark-color);
+    /* Change to a different color on hover */
+    transform: scale(1.05);
+    /* Slightly increase the size */
+    color: var(--decoration-pink-color);
+    /* Change text color on hover */
+}
+
+.text-content .secondary-button {
+    background-color: var(--dark-color);
+    color: var(--white-color);
+}
+
+.text-content .secondary-button:hover {
+    background-color: var(--dark-color);
+}
+
+.text-content .light-button {
+    background-color: var(--dark-color);
+    color: var(--white-color);
+}
+
+.text-content .light-button:hover {
+    background-color: var(--dark-color);
+}
+
+nav .Women-arrow .view-all-brands {
+    font-size: var(--font-small);
+    font-weight: var(--font-w5);
+    color: var(--dark-color);
+    display: flex;
+    align-items: right;
+    /* Align the text and icon in one line */
+    gap: 0.5rem;
+}
+
+nav .Women-arrow .view-all-brands:hover {
+    color: var(--dark-silver-color);
+}
+
 .right .icon-text {
     display: flex;
     flex-direction: column;
@@ -317,50 +406,31 @@ nav .fly-item {
     /* Add space between list items */
 }
 
+
 /*Women arrow section*/
+
 nav .Women-arrow .wrapper {
     flex: 1;
     z-index: 1;
-    padding-right: .5rem;
-    min-width: 200px;
+    min-width: 180px;
+    margin-bottom: 1rem;
 }
 
-nav .Women-arrow h3 {
-    padding-left: .6rem;
-    font-weight: var(--font-w5);
-}
+/*     */
 
-nav .Women-arrow ul {
-    font-size: var(--font-smaller);
-    font-weight: var(--font-w4);
-}
 
-nav .Women-arrow li a {
-    line-height: 1.6rem;
-    font-weight: var(--font-w4);
-    font-size: var(--font-small);
-}
-
-.Women-arrow .wrapperItem .media {
-    width: 100%;
-    float: right;
-    margin-right: 3rem;
-}
-
-.media .img-women-arrow img {
-    width: 100%;
-    height: auto;
-}
 
 .text-content a {
     font-size: var(--font-small);
     font-weight: var(--font-w6);
 }
 
+
 /*media query */
+
 @media screen and (min-width: 990px) {
     .container {
-        padding: .4rem;
+        padding: .3rem;
     }
 
     /* display none icon on desktop browser */
@@ -389,23 +459,124 @@ nav .Women-arrow li a {
     /*Women arrow section*/
     nav .Women-arrow {
         position: absolute;
-        top: 100%;
+        top: auto;
+        height: auto;
         left: 0;
+        right: 0;
         padding: 1rem;
         background: var(--light-silver-color);
         box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
         /* Bottom shadow */
-        line-height: 2.4rem;
+        line-height: 2rem;
         width: 100%;
-        height: auto;
+        z-index: 100;
+
+        display: none;
+    }
+
+    nav li.has-child:hover .Women-arrow {
+        display: block;
     }
 
     nav .Women-arrow .container {
         display: flex;
     }
 
+    /* Most wanted */
     .text-content h4 {
         font-size: var(--font-small);
         font-weight: var(--font-w6);
     }
+
+    nav .Women-arrow h3 {
+        padding-left: .6rem;
+        font-weight: var(--font-w5);
+        font-size: var(--font-normal);
+        text-transform: uppercase;
+        margin-bottom: 0.5rem;
+        /* Adjust the space below the heading */
+    }
+
+
+    nav .Women-arrow ul {
+        font-size: var(--font-smaller);
+        font-weight: var(--font-w4);
+        margin-top: 0;
+        /* Remove top margin to reduce space above the list */
+    }
+
+    nav .Women-arrow li a {
+        line-height: 1.6rem;
+        font-weight: var(--font-w4);
+        font-size: var(--font-small);
+    }
+
+    nav .Women-arrow .women-brands {
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 180px;
+    }
+
+    nav .Women-arrow .women-brands li {
+        min-width: 70px;
+    }
+
+    nav .Women-arrow .view-all-brands {
+        margin-top: .8rem;
+    }
+
+    nav .Women-arrow .wrapperItem {
+        flex: 1;
+        /*  flex: 2; gives big image not well but try it later */
+        padding: 0;
+        position: relative;
+        align-items: center;
+    }
+
+    nav .Women-arrow .row {
+        width: 100%;
+    }
+
+    .Women-arrow .wrapperItem .media {
+        position: relative;
+        width: 100%;
+        /* Ensures the image takes up the full width of its container */
+        height: 400px;
+        /* Set a specific height for the image container */
+        overflow: hidden;
+    }
+
+    .Women-arrow .wrapperItem .media img {
+        width: 100%;
+        /* Ensures the image takes up the full width of its container */
+        height: 400px;
+        /* Makes sure the image fills the container's height */
+        object-fit: cover;
+        /* Ensures the image covers the container area without distortion */
+    }
+
+    .Women-arrow .wrapperItem .text-content {
+        position: absolute;
+        bottom: 6rem;
+        /* Keeps the text further down within the image */
+        left: 50%;
+        /* Centers the text */
+        transform: translateX(-50%);
+        /* Corrects the left positioning */
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        /* Adds space between the text and the button */
+        text-align: center;
+    }
+
+    .Women-arrow .wrapperItem .text-content h4 {
+        font-size: 2rem;
+        font-weight: var(--font-w7);
+        text-align: center;
+        color: var(--orange-color);
+    }
+
 }

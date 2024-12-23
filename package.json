@@ -1,17 +1,21 @@
 {
-  "name": "e-commerce",
-  "version": "1.0.0",
-  "description": "E-commerce",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
-  },
-  "keywords": [],
-  "author": "Mymoon Dobaibi",
-  "license": "ISC",
-  "dependencies": {
-    "boxicons": "^2.1.4",
-    "express": "^4.19.2",
-    "remixicon": "^4.3.0"
-  }
+    "name": "e-commerce",
+    "version": "1.0.0",
+    "description": "E-commerce",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node server.js",
+        "open": "open http://localhost:3000"
+    },
+    "keywords": [],
+    "author": "Mymoon Dobaibi",
+    "license": "ISC",
+    "dependencies": {
+        "boxicons": "^2.1.4",
+        "express": "^4.19.2",
+        "remixicon": "^4.3.0"
+    },
+    "devDependencies": {
+        "open": "^8.4.0"
+    }
 }
