@@ -9,12 +9,13 @@
 }
 
 :root {
+    --vlight-red-color: rgb(227, 124, 124);
     --light-red-color: rgb(243, 77, 77);
     --light-silver-color: rgba(221, 207, 207, 0.586);
     --dark-silver-color: rgb(97, 97, 97);
     --white-color: rgb(255, 255, 255);
     --purble-color: rgb(151, 2, 151);
-    --dark-purble-color: rgb(90, 15, 106);
+    --dark-purble-color: rgba(48, 19, 70, 0.832);
     --orange-color: rgb(252, 218, 188);
     --dark-color: rgb(0, 0, 0);
     --decoration-pink-color: rgb(240, 183, 240);
@@ -378,6 +379,12 @@ nav .Women-arrow .view-all-brands {
     gap: 0.5rem;
 }
 
+/* departments-cat departments-head mini-text  */
+.header-main .mini-text {
+    font-size: var(--font-smaller);
+    color: var(--orange-color);
+}
+
 nav .Women-arrow .view-all-brands:hover {
     color: var(--dark-silver-color);
 }
@@ -416,9 +423,219 @@ nav .Women-arrow .wrapper {
     margin-bottom: 1rem;
 }
 
-/*     */
+/*  Header */
+/*  main header , category departments */
+
+.header-main {
+    background-color: var(--dark-purble-color);
+    padding: 1rem;
+    margin-bottom: 2rem;
+}
+
+.departments-cat {
+    position: relative;
+    z-index: 100;
+}
+
+.departments-cat .departments-head {
+    background-color: var(--vlight-red-color);
+    position: relative;
+    width: 300px;
+    padding: 1rem .8rem;
+    border-radius: 7px 7px 0 0;
+    color: var(--white-color);
+    margin-bottom: -4.3rem;
+}
+
+.departments-cat .departments-head .mini-text {
+    color: var(--orange-color);
+}
+
+.departments-cat .departments-trigger {
+    color: var(--white-color);
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 1.3rem;
+    height: 60px;
+    width: 60px;
+    margin-block: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hamburger .line {
+    width: 24px;
+    height: 3px;
+    background-color: var(--white-color);
+    margin-block: 4px;
+    transform-origin: left;
+    animation: menuBtn 500ms ease-in-out alternate infinite;
+}
+
+.hamburger .line-2 {
+    animation-delay: 150ms;
+    /* Delay the animation for the second line */
+}
+
+.hamburger .line-3 {
+    animation-delay: 300ms;
+    /* Delay the animation for the third line */
+}
+
+@keyframes menuBtn {
+    0% {
+        transform: scaleX(1);
+        /* Initial width of the line */
+    }
+
+    100% {
+        transform: scaleX(0.5);
+        /* Reduced width of the line */
+    }
+}
+
+/* header , search , form */
+/* Container for the right section */
+.header-main .right {
+    flex: 1;
+    justify-content: center;
+    /* Center the search box horizontally , maybe i will reomve it later cuz it dosnt need*/
+    align-items: center;
+    /* Center the search box vertically , maybe i will reomve it later cuz it dosnt need*/
+}
+
+form {
+    position: relative;
+}
+
+/* Search input field */
+form.search input {
+    line-height: 2.8rem;
+    padding: 0 7rem 0 3rem;
+    /* Add space inside for the icon and text */
+    width: 100%;
+    outline: 0;
+    border: 0;
+    border-radius: 5px;
+    font-weight: 500;
+    font-size: var(--font-small);
+    border: 2px solid #ddd;
+    /* Light border */
+    transition: border-color 0.3s ease;
+    right: 4rem;
+}
+
+form.search :where(span, button) {
+    position: absolute;
+    padding: .5rem 1.5rem;
+    /* Add space inside for the icon and text */
+    outline: 0;
+    top: 0;
+    height: 100%;
+    font-size: var(--font-small);
+}
+
+form.search .icon-large {
+    position: absolute;
+    left: .1rem;
+    font-size: var(--font-smaller-normal);
+    color: var(--light-silver-color);
+    margin-top: .3rem;
+}
+
+form.search button {
+    right: 0;
+    outline: none;
+    outline: 0;
+    top: 0;
+    border: 0;
+    border-radius: 5px 2px 2px 5px;
+    font-size: var(--font-small);
+    font-weight: 500;
+    color: var(--white-color);
+    background-color: var(--vlight-red-color);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form.search button:hover {
+    background-color: black;
+}
 
 
+
+/*
+.search-box {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 80%;
+    max-width: 800px;
+    margin-right: 300px;
+}
+form.search {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+    .search-box .search {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 1.8rem;
+}
+
+*/
+
+/* 
+.search-box .search input {
+    line-height: 2.5rem;
+    padding: 0 7rem 0 4rem;
+    /* Add space inside for the icon and text 
+    width: 100%;
+    outline: none;
+    border-radius: 25px;
+    font-weight: 500;
+    font-size: var(--font-small);
+    border: 2px solid #ddd;
+    transition: border-color 0.3s ease;
+}
+
+form input:focus {
+    border-color: var(--vlight-red-color);
+  
+}
+    .search-box {
+    position: relative;
+    max-width: 400px;
+    width: 100%;
+}
+form .search .icon-large {
+    position: absolute;
+    left: 1rem;
+    font-size: 1.2rem;
+    color: #aaa;
+    height: 100%;
+}
+    form.search input:focus {
+    border-color: var(--vlight-red-color);
+ 
+}
+*/
+
+
+
+
+
+
+
+.search-box {
+    position: relative;
+    width: 50%;
+    /* Ensure the search box uses the full width available */
+}
 
 .text-content a {
     font-size: var(--font-small);
@@ -579,4 +796,11 @@ nav .Women-arrow .wrapper {
         color: var(--orange-color);
     }
 
+}
+
+/* header , search , form */
+/* Container for the right section */
+.header-main .right {
+    max-width: 800px;
+    margin-left: auto;
 }
